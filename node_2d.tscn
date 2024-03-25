@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://cncif5xdtkkev"]
+
+[ext_resource type="Texture2D" uid="uid://ig6v7gmivca2" path="res://background/background_layer_1.png" id="1_85s3o"]
+[ext_resource type="Texture2D" uid="uid://cjjnmifas25gt" path="res://icon.svg" id="1_d5wrh"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="2_661pa"]
+[ext_resource type="Texture2D" uid="uid://ba1ut6lkdsoty" path="res://background/background_layer_2.png" id="2_r33gg"]
+[ext_resource type="Texture2D" uid="uid://bs7r50efi4o1k" path="res://_Run.png" id="3_i8cqj"]
+[ext_resource type="PackedScene" uid="uid://doat2ti212uwg" path="res://coin.tscn" id="4_1ilj5"]
+[ext_resource type="Script" path="res://Label.gd" id="5_a7ax5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_517v8"]
+size = Vector2(1152, 129)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oc03a"]
+radius = 11.3333
+height = 39.3333
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="."]
+position = Vector2(578, 323.5)
+scale = Vector2(5, 5.047)
+texture = ExtResource("1_85s3o")
+
+[node name="BackgroundLayer2" type="Sprite2D" parent="BackgroundLayer1"]
+position = Vector2(320.2, 0.891617)
+texture = ExtResource("1_85s3o")
+
+[node name="BackgroundLayer3" type="Sprite2D" parent="BackgroundLayer1/BackgroundLayer2"]
+position = Vector2(-319.5, 0.459735)
+scale = Vector2(0.999375, 1.02301)
+texture = ExtResource("2_r33gg")
+
+[node name="BackgroundLayer4" type="Sprite2D" parent="BackgroundLayer1/BackgroundLayer2"]
+position = Vector2(1.00003, -0.990687)
+scale = Vector2(0.999375, 1.02301)
+texture = ExtResource("2_r33gg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, 581)
+scale = Vector2(8.95312, 1)
+texture = ExtResource("1_d5wrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(577, 582)
+shape = SubResource("RectangleShape2D_517v8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1149, 3)
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, 581)
+scale = Vector2(8.95312, 1)
+texture = ExtResource("1_d5wrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(577, 582)
+shape = SubResource("RectangleShape2D_517v8")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(2296, 3)
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D3"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, 581)
+scale = Vector2(8.95312, 1)
+texture = ExtResource("1_d5wrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(577, 582)
+shape = SubResource("RectangleShape2D_517v8")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(450, 458)
+scale = Vector2(3, 3)
+script = ExtResource("2_661pa")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(3.66667, -20)
+texture = ExtResource("3_i8cqj")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_oc03a")
+
+[node name="Label" type="Label" parent="CharacterBody2D"]
+offset_left = -149.333
+offset_top = -107.333
+offset_right = -56.3333
+offset_bottom = -38.3333
+theme_override_font_sizes/font_size = 25
+script = ExtResource("5_a7ax5")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Node2D2" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(948, 436)
+
+[node name="Node2D3" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(645, 449)
+
+[node name="Node2D4" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(364, 105)
+
+[node name="Node2D5" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(77, 392)
+
+[node name="Node2D6" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(234, 291)
+
+[node name="Node2D7" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(582, 248)
+
+[node name="Node2D8" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(779, 243)
+
+[node name="Node2D9" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(2112, 431)
+
+[node name="Node2D10" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(1809, 444)
+
+[node name="Node2D11" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(1528, 100)
+
+[node name="Node2D12" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(1241, 387)
+
+[node name="Node2D13" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(1398, 286)
+
+[node name="Node2D14" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(1746, 243)
+
+[node name="Node2D15" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(1943, 238)
+
+[node name="Node2D16" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(3218, 411)
+
+[node name="Node2D17" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(2915, 424)
+
+[node name="Node2D18" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(2634, 80)
+
+[node name="Node2D19" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(2347, 367)
+
+[node name="Node2D20" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(2504, 266)
+
+[node name="Node2D21" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(2852, 223)
+
+[node name="Node2D22" parent="Node" instance=ExtResource("4_1ilj5")]
+position = Vector2(3049, 218)
